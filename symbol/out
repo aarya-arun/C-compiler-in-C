@@ -1,0 +1,80 @@
+In file included from parser.y:5:0:
+symbolTable.c: In function ‘insert_index’:
+symbolTable.c:207:26: warning: passing argument 1 of ‘atoi’ makes pointer from integer without a cast [-Wint-conversion]
+       st[i].index = atoi(ind);
+                          ^~~
+In file included from parser.y:3:0:
+/usr/include/stdlib.h:104:12: note: expected ‘const char *’ but argument is of type ‘int’
+ extern int atoi (const char *__nptr)
+            ^~~~
+In file included from parser.y:5:0:
+symbolTable.c: In function ‘display’:
+symbolTable.c:239:69: warning: integer constant is too large for its type
+     printf("%d\t%s\t\t%d\t\t%d\t",st[i].sno,st[i].token,st[i].scope,77777777777777777749);
+                                                                     ^~~~~~~~~~~~~~~~~~~~
+symbolTable.c:239:12: warning: format ‘%d’ expects argument of type ‘int’, but argument 5 has type ‘long int’ [-Wformat=]
+     printf("%d\t%s\t\t%d\t\t%d\t",st[i].sno,st[i].token,st[i].scope,77777777777777777749);
+            ^~~~~~~~~~~~~~~~~~~~~~
+/usr/share/bison++/bison.cc: In function ‘yyparse’:
+/usr/share/bison++/bison.cc:198:24: warning: implicit declaration of function ‘yyerror’; did you mean ‘yyerrok’? [-Wimplicit-function-declaration]
+ #define YY_@_ERROR yyerror
+                        ^
+/usr/share/bison++/bison.cc:667:4: note: in expansion of macro ‘YY_parse_ERROR’
+    YY_@_ERROR("parser stack overflow");
+    ^~~~~~~~~~~~~~
+/usr/share/bison++/bison.cc:180:22: warning: implicit declaration of function ‘yylex’ [-Wimplicit-function-declaration]
+ #define YY_@_LEX yylex
+                      ^
+/usr/share/bison++/bison.cc:465:25: note: in expansion of macro ‘YY_parse_LEX’
+ #define YYLEX           YY_@_LEX()
+                         ^~~~~~~~~~  
+/usr/share/bison++/bison.cc:730:23: note: in expansion of macro ‘YYLEX’
+       YY_@_CHAR = YYLEX;
+                       ^~   
+parser.y:46:48: warning: implicit declaration of function ‘printline’; did you mean ‘getline’? [-Wimplicit-function-declaration]
+   printf("\nError : Type mismatch : Line %d\n",printline());
+                                                ^~~~~~~~~
+                                                getline
+parser.y:364:77: warning: passing argument 2 of ‘insert_index’ makes integer from pointer without a cast [-Wint-conversion]
+                                 if (itype==258) {insert_index($2,$4);}
+                                                                             ^    
+In file included from parser.y:5:0:
+symbolTable.c:200:6: note: expected ‘int’ but argument is of type ‘char *’
+ void insert_index(char *name,int ind)
+      ^~~~~~~~~~~~
+parser.y:373:69: warning: passing argument 2 of ‘insert_index’ makes integer from pointer without a cast [-Wint-conversion]
+                         if (itype==258) {insert_index($2,$4);}
+                                                                     ^    
+In file included from parser.y:5:0:
+symbolTable.c:200:6: note: expected ‘int’ but argument is of type ‘char *’
+ void insert_index(char *name,int ind)
+      ^~~~~~~~~~~~
+In file included from parser.y:390:0:
+parser.l: In function ‘yylex’:
+parser.l:12:2: warning: implicit declaration of function ‘push’; did you mean ‘puts’? [-Wimplicit-function-declaration]
+ "{" {push(); return '{';}
+  ^~~~
+  puts
+In file included from parser.y:390:0:
+parser.l:13:2: warning: implicit declaration of function ‘pop’; did you mean ‘popen’? [-Wimplicit-function-declaration]
+ "}" {pop(); return '}';}
+  ^~~
+  popen
+parser.y: At top level:
+parser.y:409:1: warning: return type defaults to ‘int’ [-Wimplicit-int]
+ yyerror(char *s)
+ ^~~~~~~
+parser.y:418:6: warning: conflicting types for ‘push’
+ void push()
+      ^~~~
+In file included from parser.y:390:0:
+parser.l:12:2: note: previous implicit declaration of ‘push’ was here
+ "{" {push(); return '{';}
+  ^~~~
+parser.y:425:6: warning: conflicting types for ‘pop’
+ void pop()
+      ^~~
+In file included from parser.y:390:0:
+parser.l:13:2: note: previous implicit declaration of ‘pop’ was here
+ "}" {pop(); return '}';}
+  ^~~
