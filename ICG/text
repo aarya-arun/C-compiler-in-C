@@ -1,0 +1,4 @@
+lex parser.l
+yacc parser.y
+gcc y.tab.c -ll >out 2>&1
+./a.out test.c
