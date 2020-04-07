@@ -1,0 +1,152 @@
+c_tokens.l: In function ‘yylex’:
+c_tokens.l:12:24: warning: implicit declaration of function ‘strdup’ [-Wimplicit-function-declaration]
+ int {ECHO; yylval.var_type=strdup(yytext);return INT;}
+                        ^~~~~~
+c_tokens.l:12:24: warning: incompatible implicit declaration of built-in function ‘strdup’
+c_tokens.l:13:24: warning: incompatible implicit declaration of built-in function ‘strdup’
+ float {ECHO; yylval.var_type=strdup(yytext);return FLOAT;}
+                        ^~~~~~
+c_tokens.l:14:24: warning: incompatible implicit declaration of built-in function ‘strdup’
+ char {ECHO; yylval.var_type=strdup(yytext);return CHAR;}
+                        ^~~~~~
+c_tokens.l:22:19: warning: incompatible implicit declaration of built-in function ‘strdup’
+ [0-9]+((\.[0-9]+)?) {ECHO;yylval.text=strdup(yytext);return NUM;}
+                   ^~~~~~
+c_tokens.l:26:20: warning: incompatible implicit declaration of built-in function ‘strdup’
+ "+=" {ECHO; yylval.text=strdup(yytext); return SPLUS;}
+                    ^~~~~~
+c_tokens.l:27:20: warning: incompatible implicit declaration of built-in function ‘strdup’
+ "-=" {ECHO; yylval.text=strdup(yytext); return SMINUS;}
+                    ^~~~~~
+c_tokens.l:28:20: warning: incompatible implicit declaration of built-in function ‘strdup’
+ "*=" {ECHO; yylval.text=strdup(yytext); return SMULT;}
+                    ^~~~~~
+c_tokens.l:29:20: warning: incompatible implicit declaration of built-in function ‘strdup’
+ "/=" {ECHO; yylval.text=strdup(yytext); return SDIV;}
+                    ^~~~~~
+c_tokens.l:30:20: warning: incompatible implicit declaration of built-in function ‘strdup’
+ "++" {ECHO; yylval.text=strdup(yytext); return INC;}
+                    ^~~~~~
+c_tokens.l:31:20: warning: incompatible implicit declaration of built-in function ‘strdup’
+ "--" {ECHO; yylval.text=strdup(yytext); return DEC;}
+                    ^~~~~~
+c_tokens.l:34:19: warning: incompatible implicit declaration of built-in function ‘strdup’
+ "<=" {ECHO;yylval.text=strdup(yytext); return LESEQ; }
+                   ^~~~~~
+c_tokens.l:35:19: warning: incompatible implicit declaration of built-in function ‘strdup’
+ ">=" {ECHO;yylval.text=strdup(yytext); return GRTEQ;}
+                   ^~~~~~
+c_tokens.l:36:20: warning: incompatible implicit declaration of built-in function ‘strdup’
+ "!=" {ECHO; yylval.text=strdup(yytext); return NOTEQ;}
+                    ^~~~~~
+c_tokens.l:37:20: warning: incompatible implicit declaration of built-in function ‘strdup’
+ "==" {ECHO; yylval.text=strdup(yytext); return EQEQ; }
+                    ^~~~~~
+c_tokens.l:38:20: warning: incompatible implicit declaration of built-in function ‘strdup’
+ "<"  {ECHO; yylval.text=strdup(yytext); return LESS;}
+                    ^~~~~~
+c_tokens.l:39:20: warning: incompatible implicit declaration of built-in function ‘strdup’
+ ">"  {ECHO; yylval.text=strdup(yytext); return GREAT;}
+                    ^~~~~~
+c_tokens.l:42:19: warning: incompatible implicit declaration of built-in function ‘strdup’
+ "+"  {ECHO;yylval.text=strdup(yytext); return PLUS;}
+                   ^~~~~~
+c_tokens.l:43:19: warning: incompatible implicit declaration of built-in function ‘strdup’
+ "-"  {ECHO;yylval.text=strdup(yytext); return MINUS;}
+                   ^~~~~~
+c_tokens.l:44:19: warning: incompatible implicit declaration of built-in function ‘strdup’
+ "=" {ECHO;yylval.text=strdup(yytext); return ASSIGN; }
+                   ^~~~~~
+c_tokens.l:45:19: warning: incompatible implicit declaration of built-in function ‘strdup’
+ "*"  {ECHO;yylval.text=strdup(yytext); return MULT;}
+                   ^~~~~~
+c_tokens.l:46:19: warning: incompatible implicit declaration of built-in function ‘strdup’
+ "/"  {ECHO;yylval.text=strdup(yytext); return DIV;}
+                   ^~~~~~
+c_tokens.l:47:19: warning: incompatible implicit declaration of built-in function ‘strdup’
+ "^"  {ECHO;yylval.text=strdup(yytext); return POW;}
+                   ^~~~~~
+c_tokens.l:48:19: warning: incompatible implicit declaration of built-in function ‘strdup’
+ "||" {ECHO;yylval.text=strdup(yytext); return OR;}
+                   ^~~~~~
+c_tokens.l:49:19: warning: incompatible implicit declaration of built-in function ‘strdup’
+ "&&" {ECHO;yylval.text=strdup(yytext); return AND;}
+                   ^~~~~~
+c_tokens.l:60:19: warning: incompatible implicit declaration of built-in function ‘strdup’
+ [a-zA-Z]+[a-zA-Z0-9]* {ECHO;yylval.text=strdup(yytext); return(ID);}
+                   ^~~~~~
+c_ICG.y: In function ‘yyparse’:
+c_ICG.y:82:35: warning: implicit declaration of function ‘print_sym_tab’ [-Wimplicit-function-declaration]
+           $$=$5; print_sym_tab();
+                                   ^            
+c_ICG.y:90:19: warning: implicit declaration of function ‘remove_blank’; did you mean ‘remove_rest’? [-Wimplicit-function-declaration]
+           int a = remove_blank($$.code,code1);
+                   ^~~~~~~~~~~~
+                   remove_rest
+c_ICG.y:103:11: warning: implicit declaration of function ‘print_IC’; did you mean ‘printf’? [-Wimplicit-function-declaration]
+           print_IC(code3);
+           ^~~~~~~~
+           printf
+c_ICG.y:121:32: warning: implicit declaration of function ‘push’; did you mean ‘puts’? [-Wimplicit-function-declaration]
+     |{char * lab = new_label(); push(lab);} select_stat {pop();} stat         {$$.code = code_concatenate(2,$2.code,$4.code);
+                                ^~~~
+                                puts
+c_ICG.y:121:6: warning: implicit declaration of function ‘pop’; did you mean ‘popen’? [-Wimplicit-function-declaration]
+     |{char * lab = new_label(); push(lab);} select_stat {pop();} stat         {$$.code = code_concatenate(2,$2.code,$4.code);
+      ^~~
+      popen
+c_ICG.y:137:17: warning: implicit declaration of function ‘look_up_sym_tab’ [-Wimplicit-function-declaration]
+             if(!look_up_sym_tab($3)){printf("Undeclared variable %s\n", $3); YYERROR;}
+                 ^~~~~~~~~~~~~~~
+c_ICG.y:277:9: warning: implicit declaration of function ‘look_up_sym_tab_dec’ [-Wimplicit-function-declaration]
+ Varlist:Varlist COMMA ID    {if(look_up_sym_tab_dec($3,scope[scope_ind-1])){ yyerror("Redeclaration\n");  YYERROR; }
+         ^~~~~~~~~~~~~~~~~~~
+c_ICG.y:278:34: warning: implicit declaration of function ‘update_sym_tab’ [-Wimplicit-function-declaration]
+         if(scope[scope_ind-1]>0){update_sym_tab($<var_type>0,$3,yylineno,scope[scope_ind-1]);}else{int scop=get_scope();update_sym_tab($<var_type>0,$3,yylineno,scop);}
+                                  ^~~~~~~~~~~~~~
+c_ICG.y:278:130: warning: implicit declaration of function ‘get_scope’; did you mean ‘getsubopt’? [-Wimplicit-function-declaration]
+         if(scope[scope_ind-1]>0){update_sym_tab($<var_type>0,$3,yylineno,scope[scope_ind-1]);}else{int scop=get_scope();update_sym_tab($<var_type>0,$3,yylineno,scop);}
+                                                                                                                                  ^~~~~~~~~
+                                                                                                                                  getsubopt
+c_ICG.y:298:18: warning: implicit declaration of function ‘is_digit’; did you mean ‘isxdigit’? [-Wimplicit-function-declaration]
+               if(is_digit($3.addr))
+                  ^~~~~~~~
+                  isxdigit
+c_ICG.y: At top level:
+c_ICG.y:643:6: warning: conflicting types for ‘update_sym_tab’
+ void update_sym_tab(char* typ, char* nam, int line, int scope)
+      ^~~~~~~~~~~~~~
+c_ICG.y:278:34: note: previous implicit declaration of ‘update_sym_tab’ was here
+         if(scope[scope_ind-1]>0){update_sym_tab($<var_type>0,$3,yylineno,scope[scope_ind-1]);}else{int scop=get_scope();update_sym_tab($<var_type>0,$3,yylineno,scop);}
+                                  ^~~~~~~~~~~~~~
+c_ICG.y:672:6: warning: conflicting types for ‘print_sym_tab’
+ void print_sym_tab()
+      ^~~~~~~~~~~~~
+c_ICG.y:82:35: note: previous implicit declaration of ‘print_sym_tab’ was here
+           $$=$5; print_sym_tab();
+                                   ^            
+c_ICG.y:769:6: warning: conflicting types for ‘push’
+ void push(char* string)
+      ^~~~
+c_ICG.y:121:32: note: previous implicit declaration of ‘push’ was here
+     |{char * lab = new_label(); push(lab);} select_stat {pop();} stat         {$$.code = code_concatenate(2,$2.code,$4.code);
+                                ^~~~
+c_ICG.y:777:6: warning: conflicting types for ‘pop’
+ void pop()
+      ^~~
+c_ICG.y:121:6: note: previous implicit declaration of ‘pop’ was here
+     |{char * lab = new_label(); push(lab);} select_stat {pop();} stat         {$$.code = code_concatenate(2,$2.code,$4.code);
+      ^~~
+c_ICG.y:1009:6: warning: conflicting types for ‘print_IC’
+ void print_IC(char* str)
+      ^~~~~~~~
+c_ICG.y:103:11: note: previous implicit declaration of ‘print_IC’ was here
+           print_IC(code3);
+           ^~~~~~~~
+c_ICG.y: In function ‘print_IC’:
+c_ICG.y:1018:12: warning: comparison between pointer and integer
+  if (token != 'x' && token != 'y')
+            ^~
+c_ICG.y:1018:28: warning: comparison between pointer and integer
+  if (token != 'x' && token != 'y')
+                            ^~
