@@ -10,5 +10,6 @@ This repository contains the code for building a C program compiler using C.
 * Abstract Syntax Tree
 * Intermediate Code generator
 * Code Optimisations
+* Assembly Code Generation
 
 
